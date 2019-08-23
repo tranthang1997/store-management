@@ -1,0 +1,33 @@
+<div class="navbar-default sidebar" role="navigation">
+  <div class="sidebar-nav navbar-collapse">
+    <ul class="nav" id="side-menu">
+      <% if current_user.is_admin? %>
+        <li>
+          <%= link_to users_path do %>
+           <i class="fa fa-dashboard fa-fw"></i> <%= t "header.manager_users" %>
+          <% end %>
+        </li>
+      <% end %>
+      <li>
+        <%= link_to stores_path do %>
+          <i class="fa fa-table fa-fw"></i> <%= t "side_bar.manager_stores" %>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to categories_path do %>
+          <i class="fa fa-edit fa-fw"></i> <%= t "side_bar.manager_categories" %>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to products_path do %>
+          <i class="fa fa-edit fa-fw"></i> <%= t "side_bar.manager_products" %>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to orders_path do %>
+          <i class="fa fa-edit fa-fw"></i> <%= t "side_bar.manager_orders" %>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</div>

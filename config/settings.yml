@@ -1,0 +1,39 @@
+validates:
+  email:
+    regex: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+    length: 255
+  password:
+    length:
+      minimum: 6
+  name:
+    name_max: 50
+  store:
+    image_size: 5
+    short_description_max: 140
+  user:
+    image_size: 5
+  number: !ruby/regexp /\A\d+\z/
+user_per_page: 5
+store_per_page: 20
+category_per_page: 10
+order_per_page: 10
+product_per_page: 20
+row_text_area_descriprion: 20
+img_store_default: "https://encrypted-tbn0.gstatic.com/
+  images?q=tbn:ANd9GcT6VAJ9V6-_KySj4-3LCTe5rlDPEjcZ_lNEZHGapiygyQTepvI4"
+image_product_small: "50x50"
+image_store_small: "150x150"
+mail: "thangtr97@gmail.com"
+sum_zero: 0
+id_unavailable: -1
+role:
+  admin: "0"
+  manager: "1"
+  member: "2"
+store:
+  limit_home: 9
+category:
+  limit_home: 15
+stars_number_rate: 5
+user_avatar_path: "/uploads/user/avatar/"
+default_user_avatar_path: "/assets/default.jpg"

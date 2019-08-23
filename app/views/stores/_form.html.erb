@@ -1,0 +1,29 @@
+<%= form_for @store do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control", placeholder: t("store.enter_name") %>
+  </div>
+  <div class="form-group">
+    <%= f.label :address %>
+    <%= f.text_field :address, class: "form-control", placeholder: t("store.enter_address") %>
+  </div>
+  <div class="form-group">
+    <%= f.label :short_description %>
+    <%= f.text_field :short_description, class: "form-control", placeholder: t("store.enter_short_description") %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description, rows: Settings.row_text_area_descriprion, class: "form-control", placeholder: t("store.enter_description") %>
+  </div>
+  <div class="form-group">
+    <%= f.label :status %>
+    <%= f.select :status, options_for_select(get_statues_store, selected: get_status_key_store(@store)), {}, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :image %>
+    <%= f.file_field :image, accept: "image/png,image/gif,image/jpeg" %>
+  </div>
+  <%= button_tag t("store.confirm"), type: "submit", class: "btn btn-primary" %>
+  <%= button_tag t("store.reset"), type: "reset", class: "btn btn-default" %>
+<% end %>
